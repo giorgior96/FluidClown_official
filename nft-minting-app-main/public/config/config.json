@@ -1,10 +1,10 @@
 {
-  "CONTRACT_ADDRESS": "0xb1626417Ad23C15Fa87aE825f1dE9AF8812Dad7c",
-  "SCAN_LINK": "https://explorer.fusespark.io/0xb1626417Ad23C15Fa87aE825f1dE9AF8812Dad7c",
+  "CONTRACT_ADDRESS": "0xeD27734ffF651CAC7cDB86Fa12Af541F10A48f7b",
+  "SCAN_LINK": "https://explorer.fuse.io/address/0xeD27734ffF651CAC7cDB86Fa12Af541F10A48f7b",
   "NETWORK": {
     "NAME": "FUSE",
     "SYMBOL": "FUSE",
-    "ID": 123
+    "ID": 122
   },
   "NFT_NAME": "The Stripes NFT",
   "SYMBOL": "FLCWN",
