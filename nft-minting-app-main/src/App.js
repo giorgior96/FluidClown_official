@@ -324,7 +324,7 @@ function App() {
             ) : (
               <>
                 <s.TextTitle
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  style={{ textAlign: "center", color: "var(--accent-text)" ,fontSize:20}}
                 >
 				Fluid clown is a nft project that wants to break down the barriers of diversity. Just as Fuse tries to integrate into different blockchains to make them communicate, clowns want to involve different people, of different genders in the same project to convey an idea of ​​community that not only accepts diversity but favors it. We chose clowns because they represent gender fluidity and break down the stereotypes that still exist today. Everyone of us is a Fluid Clown. We have a public image, a facade that we have built to protect ourselves from the world: but under make-up and wigs we are people with characteristics and weaknesses. The clown can be anyone or nobody and for this he must be fluid. As the Joker of cards never has a number, he never has an identity: he can represent any other card and at the same time not be any of them. This is the Fluid Clown.
                   1 FluidClown costs {CONFIG.DISPLAY_COST}{" "}
