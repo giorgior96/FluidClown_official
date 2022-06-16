@@ -327,12 +327,17 @@ function App() {
                   style={{ textAlign: "center", color: "var(--accent-text)" ,fontSize:20}}
                 >
 				Fluid clown is a nft project that wants to break down the barriers of diversity. Just as Fuse tries to integrate into different blockchains to make them communicate, clowns want to involve different people, of different genders in the same project to convey an idea of ​​community that not only accepts diversity but favors it.
-                  1 FluidClown costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL} .
+
                 </s.TextTitle>
                 <s.SpacerXSmall />
+				<s.TextDescription
+                  style={{ textAlign: "center", color: "var(--third-text)" ,fontSize:20}}
+                >
+                   1 FluidClown costs {CONFIG.DISPLAY_COST}{" "}
+                  {CONFIG.NETWORK.SYMBOL}
+                </s.TextDescription>
                 <s.TextDescription
-                  style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  style={{ textAlign: "center", color: "var(--accent-text)"}}
                 >
                   Excluding gas fees.
                 </s.TextDescription>
