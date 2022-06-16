@@ -173,37 +173,7 @@ function App() {
       });
   };
   
-   const claimpresaleNFTs = () => {
-    let cost = CONFIG.WEI_PRESALECOST;
-    let gasLimit = CONFIG.GAS_LIMIT;
-    let totalCostWei = String(cost * mintAmount);
-    let totalGasLimit = String(gasLimit * mintAmount);
-    console.log("Cost: ", totalCostWei);
-    console.log("Gas limit: ", totalGasLimit);
-    setFeedback(`Minting your ${CONFIG.NFT_NAME}...`);
-    setClaimingNft(true);
-    blockchain.smartContract.methods
-      .mint(blockchain.account, mintAmount)
-      .send({
-        gasLimit: String(totalGasLimit),
-        to: CONFIG.CONTRACT_ADDRESS,
-        from: blockchain.account,
-        value: totalCostWei,
-      })
-      .once("error", (err) => {
-        console.log(err);
-        setFeedback("Sorry, something went wrong please try again later. Not in presale?");
-        setClaimingNft(false);
-      })
-      .then((receipt) => {
-        console.log(receipt);
-        setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit tofunft.com to view it.`
-        );
-        setClaimingNft(false);
-        dispatch(fetchData(blockchain.account));
-      });
-  };
+   
 
   const decrementMintAmount = () => {
     let newMintAmount = mintAmount - 1;
@@ -311,6 +281,16 @@ function App() {
               >
                 Rarity Table
               </StyledButton>
+			  <StyledButton
+                onClick={(e) => {
+                  window.open("/config/roadmap.png", "_blank");
+                }}
+                style={{
+                  margin: "5px",
+                }}
+              >
+                Roadmap
+              </StyledButton>
               <StyledButton
                 style={{
                   margin: "5px",
@@ -321,6 +301,7 @@ function App() {
               >
                 {CONFIG.MARKETPLACE}
               </StyledButton>
+			  
             </span>
             <s.SpacerSmall />
             {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
@@ -345,8 +326,9 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL} or {CONFIG.DISPLAY_COST_PRESALE} {CONFIG.NETWORK.SYMBOL} {"if in presale"} .
+				Fluid clown is a nft project that wants to break down the barriers of diversity. Just as Fuse tries to integrate into different blockchains to make them communicate, clowns want to involve different people, of different genders in the same project to convey an idea of ​​community that not only accepts diversity but favors it. We chose clowns because they represent gender fluidity and break down the stereotypes that still exist today. Everyone of us is a Fluid Clown. We have a public image, a facade that we have built to protect ourselves from the world: but under make-up and wigs we are people with characteristics and weaknesses. The clown can be anyone or nobody and for this he must be fluid. As the Joker of cards never has a number, he never has an identity: he can represent any other card and at the same time not be any of them. This is the Fluid Clown.
+                  1 FluidClown costs {CONFIG.DISPLAY_COST}{" "}
+                  {CONFIG.NETWORK.SYMBOL} .
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
@@ -448,16 +430,7 @@ function App() {
 					  
                     </s.Container>
 					 <s.SpacerXSmall />
-					 <StyledButton2
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          claimpresaleNFTs();
-                          getData();
-                        }}
-                      >
-                        {claimingNft ? "BUSY" : "BUY \n PRESALE"}
-                      </StyledButton2>
+					 
                   </>
                 )}
               </>
